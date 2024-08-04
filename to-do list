@@ -1,0 +1,23 @@
+def todo_list():
+    tasks = []
+    while True:
+        action = input("Choose action: [add, remove, show, quit]: ").lower()
+        if action == 'add':
+            task = input("Enter task: ")
+            tasks.append(task)
+        elif action == 'remove':
+            task = input("Enter task to remove: ")
+            if task in tasks:
+                tasks.remove(task)
+            else:
+                print("Task not found.")
+        elif action == 'show':
+            print("To-Do List:")
+            for i, task in enumerate(tasks, 1):
+                print(f"{i}. {task}")
+        elif action == 'quit':
+            break
+        else:
+            print("Invalid action")
+
+todo_list()
